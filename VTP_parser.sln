@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTP_parser", "VTP_parser\VTP_parser.csproj", "{6F281B04-402C-4996-AFD5-96AD701729B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunnerParser", "RunnerParser\RunnerParser.csproj", "{D342A8D7-CCE6-4B1D-8B02-9BDB7CA48366}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F281B04-402C-4996-AFD5-96AD701729B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F281B04-402C-4996-AFD5-96AD701729B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F281B04-402C-4996-AFD5-96AD701729B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F281B04-402C-4996-AFD5-96AD701729B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D342A8D7-CCE6-4B1D-8B02-9BDB7CA48366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D342A8D7-CCE6-4B1D-8B02-9BDB7CA48366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D342A8D7-CCE6-4B1D-8B02-9BDB7CA48366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D342A8D7-CCE6-4B1D-8B02-9BDB7CA48366}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
