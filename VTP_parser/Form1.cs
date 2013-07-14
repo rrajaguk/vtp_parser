@@ -20,16 +20,20 @@ namespace VTP_parser
     {
         public enum displayedData {success,VB,excel}
         private displayedData currentlyDisplayed;
+        private MergeResult mergeRes;
+       
         public Form1()
         {
             InitializeComponent();
         }
-        MergeResult mergeRes;
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            ExcelParser excelFileParser = new ExcelParser(@"C:\Users\Ronald\Documents\MultiImsiV2\com\ProductDoc\Val\VTP_VTR\MultiImsiV2_001_VTP_VTR.xlsx");
+            ExcelParser excelFileParser = new ExcelParser(VTPLocationText.Text);
             excelFileParser.Parse();
-            VbProjParser vbProjectParser = new VbProjParser(@"C:\Users\Ronald\Documents\MultiImsiV2\valid\sc_valid_net\Stand_Prop_Projects\Mobcom\MultiIMSIV2\", "MultiIMSIV2.vbproj");
+            VbProjParser vbProjectParser = new VbProjParser(
+                Path.GetDirectoryName(VBProjLocationText.Text),
+                Path.GetFileName(VBProjLocationText.Text));
             vbProjectParser.Parse();
             List<TestMerge> MainTestCase = new List<TestMerge>();
 
@@ -132,6 +136,27 @@ namespace VTP_parser
             TestMerge result = mergeRes.Success[p];
             populateExcel(result.excelSource);
             populateVB(result.vbSource);
+        }
+
+        private void VBProjLocButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Visual Basic Project (.vbproj)|*.vbproj";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                VBProjLocationText.Text = openFileDialog1.FileName;
+                VBProjLocationText.SelectionStart = VBProjLocationText.Text.Length - 1;
+            }
+        }
+
+        private void ExcelLocButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Excel File (.xlsx)|*.xlsx";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                VTPLocationText.Text = openFileDialog1.FileName;
+                VTPLocationText.SelectionStart = VTPLocationText.Text.Length - 1;
+            }
+
         }       
 
     }

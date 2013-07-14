@@ -19,7 +19,7 @@ namespace RunnerParser
         public VbProjParser(string workingPath, string projectName)
         {
             this.workingPath = workingPath;
-            file = new System.IO.StreamReader(workingPath + projectName);
+            file = new System.IO.StreamReader(workingPath +"\\" +projectName);
             TestsFileNames = new List<string>();
             TestCases = new List<TestCase>();
         }

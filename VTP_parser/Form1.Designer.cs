@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.VBProjLocationText = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CopyVB = new System.Windows.Forms.Button();
             this.ExcelBehaviorText = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ExcelDescriptionText = new System.Windows.Forms.RichTextBox();
@@ -41,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ExcelFileNameText = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CopyExcel = new System.Windows.Forms.Button();
             this.VBBehaviorText = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.VBDescriptionText = new System.Windows.Forms.RichTextBox();
@@ -52,10 +54,13 @@
             this.SuccessButton = new System.Windows.Forms.Button();
             this.VBTestButton = new System.Windows.Forms.Button();
             this.ExcelButton = new System.Windows.Forms.Button();
-            this.CopyVB = new System.Windows.Forms.Button();
-            this.CopyExcel = new System.Windows.Forms.Button();
             this.MissmatchButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.VTPLocationText = new System.Windows.Forms.TextBox();
+            this.VBProjLocButton = new System.Windows.Forms.Button();
+            this.ExcelLocButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(816, 60);
+            this.button1.Location = new System.Drawing.Point(816, 65);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -71,12 +76,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // VBProjLocationText
             // 
-            this.textBox1.Location = new System.Drawing.Point(654, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.VBProjLocationText.Location = new System.Drawing.Point(709, 12);
+            this.VBProjLocationText.Name = "VBProjLocationText";
+            this.VBProjLocationText.Size = new System.Drawing.Size(160, 20);
+            this.VBProjLocationText.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -104,6 +109,15 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Excel File";
+            // 
+            // CopyVB
+            // 
+            this.CopyVB.Location = new System.Drawing.Point(190, 360);
+            this.CopyVB.Name = "CopyVB";
+            this.CopyVB.Size = new System.Drawing.Size(92, 23);
+            this.CopyVB.TabIndex = 9;
+            this.CopyVB.Text = "Copy To VB ->>";
+            this.CopyVB.UseVisualStyleBackColor = true;
             // 
             // ExcelBehaviorText
             // 
@@ -189,6 +203,15 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "VB File";
+            // 
+            // CopyExcel
+            // 
+            this.CopyExcel.Location = new System.Drawing.Point(30, 358);
+            this.CopyExcel.Name = "CopyExcel";
+            this.CopyExcel.Size = new System.Drawing.Size(107, 23);
+            this.CopyExcel.TabIndex = 10;
+            this.CopyExcel.Text = "<<- Copy to Excel";
+            this.CopyExcel.UseVisualStyleBackColor = true;
             // 
             // VBBehaviorText
             // 
@@ -289,24 +312,6 @@
             this.ExcelButton.UseVisualStyleBackColor = true;
             this.ExcelButton.Click += new System.EventHandler(this.ExcelButton_Click);
             // 
-            // CopyVB
-            // 
-            this.CopyVB.Location = new System.Drawing.Point(190, 360);
-            this.CopyVB.Name = "CopyVB";
-            this.CopyVB.Size = new System.Drawing.Size(92, 23);
-            this.CopyVB.TabIndex = 9;
-            this.CopyVB.Text = "Copy To VB ->>";
-            this.CopyVB.UseVisualStyleBackColor = true;
-            // 
-            // CopyExcel
-            // 
-            this.CopyExcel.Location = new System.Drawing.Point(30, 358);
-            this.CopyExcel.Name = "CopyExcel";
-            this.CopyExcel.Size = new System.Drawing.Size(107, 23);
-            this.CopyExcel.TabIndex = 10;
-            this.CopyExcel.Text = "<<- Copy to Excel";
-            this.CopyExcel.UseVisualStyleBackColor = true;
-            // 
             // MissmatchButton
             // 
             this.MissmatchButton.Enabled = false;
@@ -321,17 +326,57 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(557, 34);
+            this.label9.Location = new System.Drawing.Point(602, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(101, 13);
             this.label9.TabIndex = 14;
-            this.label9.Text = "label9";
+            this.label9.Text = "VB Project Location";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(602, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "VTP File Location";
+            // 
+            // VTPLocationText
+            // 
+            this.VTPLocationText.Location = new System.Drawing.Point(709, 38);
+            this.VTPLocationText.Name = "VTPLocationText";
+            this.VTPLocationText.Size = new System.Drawing.Size(160, 20);
+            this.VTPLocationText.TabIndex = 15;
+            // 
+            // VBProjLocButton
+            // 
+            this.VBProjLocButton.Location = new System.Drawing.Point(874, 10);
+            this.VBProjLocButton.Name = "VBProjLocButton";
+            this.VBProjLocButton.Size = new System.Drawing.Size(27, 23);
+            this.VBProjLocButton.TabIndex = 17;
+            this.VBProjLocButton.Text = "...";
+            this.VBProjLocButton.UseVisualStyleBackColor = true;
+            this.VBProjLocButton.Click += new System.EventHandler(this.VBProjLocButton_Click);
+            // 
+            // ExcelLocButton
+            // 
+            this.ExcelLocButton.Location = new System.Drawing.Point(874, 38);
+            this.ExcelLocButton.Name = "ExcelLocButton";
+            this.ExcelLocButton.Size = new System.Drawing.Size(27, 23);
+            this.ExcelLocButton.TabIndex = 18;
+            this.ExcelLocButton.Text = "...";
+            this.ExcelLocButton.UseVisualStyleBackColor = true;
+            this.ExcelLocButton.Click += new System.EventHandler(this.ExcelLocButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 667);
+            this.Controls.Add(this.ExcelLocButton);
+            this.Controls.Add(this.VBProjLocButton);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.VTPLocationText);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.MissmatchButton);
             this.Controls.Add(this.ExcelButton);
@@ -340,7 +385,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.VBProjLocationText);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -357,7 +402,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox VBProjLocationText;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
@@ -384,6 +429,11 @@
         private System.Windows.Forms.Button CopyExcel;
         private System.Windows.Forms.Button MissmatchButton;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox VTPLocationText;
+        private System.Windows.Forms.Button VBProjLocButton;
+        private System.Windows.Forms.Button ExcelLocButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
