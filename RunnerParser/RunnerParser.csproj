@@ -76,6 +76,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\RunnerParser.exe.config" />
+    <None Include="bin\Debug\RunnerParser.vshost.exe.config" />
+    <None Include="bin\Debug\RunnerParser.vshost.exe.manifest" />
+    <None Include="bin\Release\RunnerParser.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Debug\Ionic.Zip.dll" />
+    <Content Include="bin\Debug\NPOI.dll" />
+    <Content Include="bin\Debug\NPOI.OOXML.dll" />
+    <Content Include="bin\Debug\NPOI.OOXML.xml" />
+    <Content Include="bin\Debug\NPOI.OpenXml4Net.dll" />
+    <Content Include="bin\Debug\NPOI.OpenXml4Net.xml" />
+    <Content Include="bin\Debug\NPOI.OpenXmlFormats.dll" />
+    <Content Include="bin\Debug\NPOI.pdb" />
+    <Content Include="bin\Debug\NPOI.xml" />
+    <Content Include="bin\Debug\RunnerParser.exe" />
+    <Content Include="bin\Debug\RunnerParser.pdb" />
+    <Content Include="bin\Debug\RunnerParser.vshost.exe" />
+    <Content Include="bin\Release\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\Release\Ionic.Zip.dll" />
+    <Content Include="bin\Release\NPOI.dll" />
+    <Content Include="bin\Release\NPOI.OOXML.dll" />
+    <Content Include="bin\Release\NPOI.OOXML.xml" />
+    <Content Include="bin\Release\NPOI.OpenXml4Net.dll" />
+    <Content Include="bin\Release\NPOI.OpenXml4Net.xml" />
+    <Content Include="bin\Release\NPOI.OpenXmlFormats.dll" />
+    <Content Include="bin\Release\NPOI.pdb" />
+    <Content Include="bin\Release\NPOI.xml" />
+    <Content Include="bin\Release\RunnerParser.exe" />
+    <Content Include="bin\Release\RunnerParser.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
