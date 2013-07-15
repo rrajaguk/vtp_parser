@@ -11,6 +11,13 @@ namespace RunnerParser.ObjRepresentation
     {
         public TestCase vbSource { get; set; }
         public TestCase excelSource { get; set; }
+        public bool sameDescription { get; set; }
+        public bool sameDomain { get; set; }
+        public TestMerge()
+        {
+            sameDescription = true;
+            sameDomain = true;
+        }
         public bool isSame()
         {
             // compare domain
@@ -19,16 +26,17 @@ namespace RunnerParser.ObjRepresentation
             val2 = excelSource.TestDomain;
             if (string.Compare(val1, val2, true) != 0)
             {
-                return false;
+                sameDomain = false;
             }            
             // compare behaviour
-            val1 = StringHelper.trimPunctiationAndSpaces(vbSource.TestBehaviour);
+            val1 = StringHelper.trimPunctiationAndSpaces(vbSource.TestDescription);
             val2 = StringHelper.trimPunctiationAndSpaces(excelSource.TestBehaviour);
             if (string.Compare(val1, val2, true) != 0)
             {
-                return false;
+                sameDescription = false;
             }
-            return true;
+
+            return (sameDescription && sameDomain);
         }
         public override string ToString()
         {
