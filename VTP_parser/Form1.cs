@@ -51,10 +51,10 @@ namespace VTP_parser
         private void SuccessButton_Click(object sender, EventArgs e)
         {
             clearAllTextBox();
+            currentlyDisplayed = displayedData.success;
             dataGridView1.DataSource =  TestMergeAdapter.Adapt(mergeRes,mergeResultType.success);
             dataGridView1.Columns[0].Width = 180;
             dataGridView1.Columns[1].Width = 40;
-            currentlyDisplayed = displayedData.success;
             showBox(true, true);
             hideCopyOptions();
         }
@@ -78,10 +78,10 @@ namespace VTP_parser
         private void MissmatchButton_Click(object sender, EventArgs e)
         {
             clearAllTextBox();
+            currentlyDisplayed = displayedData.missmatch;
             dataGridView1.DataSource = TestMergeAdapter.Adapt(mergeRes, mergeResultType.mismatch);
             dataGridView1.Columns[0].Width = 180;
             dataGridView1.Columns[1].Width = 40;
-            currentlyDisplayed = displayedData.missmatch;
             showBox(true, true);
         }
 
@@ -108,7 +108,7 @@ namespace VTP_parser
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex <= 0)
+            if (e.RowIndex < 0)
                 return;
             clearAllTextBox();
             switch (currentlyDisplayed)
@@ -307,6 +307,13 @@ namespace VTP_parser
             CopyDescriptionExcel_VB.Visible = false;
             resetColoring(false, true);
             //TODO: handle the data
+        }
+
+        private void SwapDescBehavior_Click(object sender, EventArgs e)
+        {
+            string temp = VBDescriptionText.Text;
+            VBDescriptionText.Text = VBBehaviorText.Text;
+            VBBehaviorText.Text = temp;
         }
 
 

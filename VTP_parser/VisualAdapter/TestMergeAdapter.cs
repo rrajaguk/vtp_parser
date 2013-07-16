@@ -63,7 +63,7 @@ namespace VTP_parser.VisualAdapter
                 });
             }
             result.Sort((p1, p2) => TestMergeComparer.Compare(p1.isSame,p2.isSame));
-            mr.Success.Sort(new TestMergeComparer());
+            toAdapt.Sort(new TestMergeComparer());
             return result;
         }
      

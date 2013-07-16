@@ -130,6 +130,7 @@
     <Content Include="bin\Release\RunnerParser.pdb" />
     <Content Include="bin\Release\VTP_parser.exe" />
     <Content Include="bin\Release\VTP_parser.pdb" />
+    <None Include="Properties\swap_icon.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -65,6 +65,7 @@
             this.ExcelLocButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SwapDescBehavior = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ExcelBox.SuspendLayout();
             this.VBBox.SuspendLayout();
@@ -202,6 +203,7 @@
             // 
             // VBBox
             // 
+            this.VBBox.Controls.Add(this.SwapDescBehavior);
             this.VBBox.Controls.Add(this.CopyDescriptionVB_Excel);
             this.VBBox.Controls.Add(this.CopyDomainVB_Excel);
             this.VBBox.Controls.Add(this.CopyAllVB_Excel);
@@ -256,7 +258,7 @@
             // 
             // VBBehaviorText
             // 
-            this.VBBehaviorText.Location = new System.Drawing.Point(57, 240);
+            this.VBBehaviorText.Location = new System.Drawing.Point(57, 253);
             this.VBBehaviorText.Name = "VBBehaviorText";
             this.VBBehaviorText.Size = new System.Drawing.Size(253, 96);
             this.VBBehaviorText.TabIndex = 8;
@@ -265,7 +267,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 224);
+            this.label5.Location = new System.Drawing.Point(35, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 7;
@@ -425,6 +427,16 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
+            // SwapDescBehavior
+            // 
+            this.SwapDescBehavior.Image = global::VTP_parser.Properties.Resources.swap_icon;
+            this.SwapDescBehavior.Location = new System.Drawing.Point(269, 222);
+            this.SwapDescBehavior.Name = "SwapDescBehavior";
+            this.SwapDescBehavior.Size = new System.Drawing.Size(41, 28);
+            this.SwapDescBehavior.TabIndex = 20;
+            this.SwapDescBehavior.UseVisualStyleBackColor = true;
+            this.SwapDescBehavior.Click += new System.EventHandler(this.SwapDescBehavior_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,6 +502,7 @@
         private System.Windows.Forms.Button CopyDescriptionVB_Excel;
         private System.Windows.Forms.Button CopyDomainVB_Excel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button SwapDescBehavior;
     }
 }
 
